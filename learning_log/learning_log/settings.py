@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Customized app by Leo
     'learning_logs',
     'pizzeria',
+    'camera',
 ]
 
 MIDDLEWARE = [
