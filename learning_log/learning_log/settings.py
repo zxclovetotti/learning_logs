@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'learning_logs',
     'pizzeria',
     'camera',
+    'meal_planner',
 ]
 
 MIDDLEWARE = [
