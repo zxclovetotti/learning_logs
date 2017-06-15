@@ -9,4 +9,7 @@ app_name = 'learning_logs'
 urlpatterns = [
     # homepage
     url(r'^$', views.index, name='index'),
+
+    # display topics
+    url(r'^topics/$', views.topics, name='topics'),
 ]
