@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third Party 
+    'bootstrap3',
+
     # Customized app by Leo
     'learning_logs',
     'pizzeria',
@@ -124,3 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Setting for django-bootstrap3
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}
