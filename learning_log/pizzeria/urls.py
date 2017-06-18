@@ -10,8 +10,8 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 
     # pizzas
-    url(r'^/pizzas/$', views.pizzas, name='pizzas'),
+    url(r'^pizzas/$', views.pizzas, name='pizzas'),
 
     # pizza
-    url(r'^/pizzas/(?P<pizza_id>d+)$', views.pizza, name='pizza'),
+    url(r'^pizzas/(?P<pizza_id>d+)$', views.pizza, name='pizza'),
 ]
