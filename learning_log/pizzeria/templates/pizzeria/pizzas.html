@@ -4,11 +4,9 @@
     <div class="container">
         <p>Pizzas</p>
         <ul>
-            {% for pizza in pizzas%}
+            {% for pizza in pizzas %}
             <li>
-                <a href="{url 'pizzeria:pizza' pizza.id}">
-                    {{pizza}}
-                </a>
+                <a href="{% url 'pizzeria:pizza' pizza.id %}">{{ pizza }}</a>
             </li>
             {% empty %}
             <li>No pizzas have been added yet.</li>

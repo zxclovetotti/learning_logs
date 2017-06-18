@@ -2,12 +2,16 @@
 
 {% block content %}
     <div class="container">
-        <p>Pizza: {{ pizza }}
+        <p>Pizza: {{ pizza }}</p>
+        <p>Toppings</p>
         <ul>
             {% for topping in toppings %}
-            <li>{{ topping }}</li>
+            <li>
+                <p>{{ topping.date_added|date:'M d, Y H:i'}}</p>
+                <p>{{ topping.text|linebreaks }}</p>
+            </li>
             {% empty %}
-            <li>No pizzas have been added yet.</li>
+            <li>No toppings have been added yet.</li>
             {% endfor %}
         </ul>
     </div>
