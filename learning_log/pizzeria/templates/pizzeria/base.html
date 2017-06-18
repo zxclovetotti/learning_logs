@@ -10,8 +10,9 @@
 </head>
 <body>
         <p>
-            <a href="{% url 'learning_logs:index' %}">Learning log</a>
-            <a href="{% url 'learning_logs:topics' %}">Topics</a>
+            <a href="{% url 'pizzeria:index' %}">Index</a>
+            <a href="{% url 'pizzeria:pizzas' %}">Pizza</a>
+            
         </p>
         <div class="container">
             {% block content %}{% endblock content%}
