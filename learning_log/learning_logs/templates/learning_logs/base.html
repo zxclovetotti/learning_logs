@@ -10,15 +10,14 @@
         Learning Log
     </title>
     <body>
-
-        <p>
-            <a href="{% url 'learning_logs:index' %}">Learning log</a>
-            <a href="{% url 'learning_logs:topics' %}">Topics</a>
-        </p>
-        {% block content %}{% endblock content%}
+        <nav class="navbar navbar-default navbar-static-top">
+                    <a href="{% url 'learning_logs:index' %}">Learning log</a>
+                    <a href="{% url 'learning_logs:topics' %}">Topics</a>
+        </nav>
+  
+        <div class="container">
+            {% block content %}{% endblock content%}
+        </div>
+       
     </body>
 </html>
-
-
-
-
