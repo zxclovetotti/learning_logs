@@ -42,14 +42,14 @@ def new_topic(request):
     return render(request, 'learning_logs/new_topic.html', context)
 
 def new_entry(request, topic_id):
-    # add new entry for selected topic
+    """Add a new entry for a particular topic."""
     topic = Topic.objects.get(id=topic_id)
-
+    
     if request.method != 'POST':
-        # Nothing has been submitted so return a blank form
-        form = EntryForm()
+        # No data submitted; create a blank form.
+        form = EntryForm()        
     else:
-        # processing sumitted data
+        # POST data submitted; process data.
         form = EntryForm(data=request.POST)
         if form.is_valid():
             new_entry = form.save(commit=False)
@@ -57,6 +57,6 @@ def new_entry(request, topic_id):
             new_entry.save()
             return HttpResponseRedirect(reverse('learning_logs:topic',
                                         args=[topic_id]))
-        
+    
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
