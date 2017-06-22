@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^meal_planner/', include('meal_planner.urls')),
     url(r'^polls/', include('polls.urls')),
     url(r'', include('learning_logs.urls'), name='learning_logs'),
+    url(r'^users/', include('users.urls'), name='users'),
     # url(r'^learning_logs/', include('learning_logs.urls')),
     url(r'^admin/', admin.site.urls),
 ]

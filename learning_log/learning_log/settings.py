@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # Customized app by Leo
     'learning_logs',
+    'users',
     'pizzeria',
     'camera',
     'meal_planner',
