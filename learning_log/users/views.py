@@ -4,6 +4,6 @@ from django.core.urlresolvers import reverse
 
 from django.contrib.auth import logout
 def logout_view(request):
-    # log out
+    """Log the user out."""
     logout(request)
     return HttpResponseRedirect(reverse('learning_logs:index'))
