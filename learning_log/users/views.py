@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 # Create your views here.
 
