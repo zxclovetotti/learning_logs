@@ -133,3 +133,6 @@ STATIC_URL = '/static/'
 BOOTSTRAP3 = {
     'include_jquery': True,
 }
+
+# my settings
+LOGIN_URL = '/users/login'
