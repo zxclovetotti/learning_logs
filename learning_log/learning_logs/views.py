@@ -77,6 +77,9 @@ def edit_entry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
 
+    if topic.owner != request.user:
+        raise Http404
+
     if request.method != 'POST':
         # No data submitted; create a blank form.
         form = EntryForm(instance=entry)        
