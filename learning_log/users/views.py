@@ -1,8 +1,9 @@
-from django.shortcuts import render
-from django.shortcuts import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.core.urlresolvers import reverse
+from django.shortcuts import HttpResponseRedirect, render
+
+
 # Create your views here.
 
 def logout_view(request):
@@ -27,4 +28,3 @@ def register(request):
             return HttpResponseRedirect(reverse('learning_logs:index'))
     context = {'form': form}
     return render(request, 'users/register.html', context)
-
