@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
@@ -25,6 +25,11 @@ def topics(request):
 def topic(request, topic_id):
     # display detail info of specific topic
     topic = Topic.objects.get(id=topic_id)
+    
+    # confirm login user
+    if topic.owner != request.user:
+        raise Http404
+
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic':topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
