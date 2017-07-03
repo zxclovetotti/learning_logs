@@ -9,10 +9,32 @@
     <title>Pizzeria</title>
 </head>
 <body>
-        <p>
-            <a href="{% url 'learning_logs:index' %}">Home</a>
-            <a href="{% url 'pizzeria:pizzas' %}">Pizzas</a>
-        </p>
+    <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    </button>
+                     <a class="navbar-brand" href="{% url 'learning_logs:index' %}">
+                         Learning log</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li> <a href="{% url 'pizzeria:pizzas' %}">Pizzas</a></li>
+                    </ul>
+                     <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                        <li><a>Hello, {{ user.username }}.</a></li>
+                        <li><a href="{% url 'users:logout' %}">LOG OUT</a></li>
+                        {% else %}
+                        <Li><a href="{% url 'users:register' %}">REGISTER</a></Li>
+                        <Li><a href="{% url 'users:login' %}">LOG IN</a></Li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div><!--/.nav-collapse -->
+        </nav>
         <div class="container">
             {% block content %}{% endblock content%}
         </div>
