@@ -1,9 +1,14 @@
 {% extends "pizzeria/base.html" %}
 
+{% block header %}
+    <div class="jumbotton">
+        <h1>Menu</h1>
+    </div>
+{% endblock header %}
+
 {% block content %}
     <div class="container">
-        <p>Menu</p>
-        <ul>
+         <ul>
             {% for pizza in pizzas %}
             <li>
                 <a href="{% url 'pizzeria:pizza' pizza.id %}">{{ pizza }}</a>
