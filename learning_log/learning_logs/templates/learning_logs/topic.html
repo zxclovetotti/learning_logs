@@ -11,14 +11,14 @@
     </p>
     <ul>
         {% for entry in entries %}
-            <div class="panel panle-default">
+            <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>
+                    <h4>
                         {{ entry.date_added|date:'M d, Y H:i' }}
                         <small>
                             <a href="{% url 'learning_logs:edit_entry' entry.id %}">edit entry</a>
                         </small>
-                    </h3>
+                    </h4>
                 </div>
             </div>
             <div class="panel-body">

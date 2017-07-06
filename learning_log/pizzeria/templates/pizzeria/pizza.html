@@ -1,17 +1,27 @@
 {% extends "pizzeria/base.html" %}
 
+
+{% block header %}
+    <h1>{{ pizza }}</h1>
+{% endblock header %}
+
 {% block content %}
     <div class="container">
-        <p>Pizza: {{ pizza }}</p>
-        <p>Toppings</p>
+        <h3>Toppings</h3>
         <ul>
             {% for topping in toppings %}
-            <li>
-                <p>{{ topping.name|linebreaks }}</p>
-                <p>{{ topping.date_added|date:'M d, Y H:i'}}</p>
-            </li>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        {{ topping.date_added|date:'M d, Y H:i'}}
+                    </h4>
+                </div>
+            </div>
+            <div class="panel-body">
+                {{ topping.name|linebreaks }}
+            </div>
             {% empty %}
-            <li>No toppings have been added yet.</li>
+            No toppings have been added yet.
             {% endfor %}
         </ul>
     </div>

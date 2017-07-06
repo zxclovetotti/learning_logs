@@ -10,9 +10,9 @@
     <div class="container">
          <ul>
             {% for pizza in pizzas %}
-            <li>
+            <li><h4>
                 <a href="{% url 'pizzeria:pizza' pizza.id %}">{{ pizza }}</a>
-            </li>
+            </h4></li>
             {% empty %}
             <li>No pizzas have been added yet.</li>
             {% endfor %}
